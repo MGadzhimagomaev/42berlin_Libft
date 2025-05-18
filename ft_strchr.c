@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 15:59:33 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/18 18:27:50 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/18 18:04:38 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/18 18:26:49 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
 /*
 #include <stdio.h>
 
 int	main()
 {
-	char	str[] = "tEsT ThIs";
-	int	i = 0;
+	char	s[] = "Find";
+	char	c = 'n';
 
-	printf("Before: %s\n", str);
-	while (i < 9)
-	{
-		str[i] = ft_tolower(str[i]);
-		i++;
-	}
-	printf("After: %s\n", str);
+	printf("Check: %s\n", ft_strchr(s, c));
 }//*/
