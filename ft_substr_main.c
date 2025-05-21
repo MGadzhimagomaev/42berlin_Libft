@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_substr_main.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 19:57:35 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/21 19:57:37 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/21 20:06:12 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/21 20:12:24 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char    **ft_split(char const *s, char c)
+int	main()
 {
-    char    **arr;
-    int    i;
-    int    j;
-    int    len;
+	char	*str = "Please copy this part.";
+	char	*out = ft_substr(str, 12, 9);
 
-    len = ft_strlen(s) / sizeof(char);
-    arr = (char **)malloc(sizeof(char) * (len + 1));
-    i = 0;
-    while (i < len)
-    {
-        if (s[i] == c)
-        {
-
-        }
-    }
+	printf("Result: %s", out);
 }

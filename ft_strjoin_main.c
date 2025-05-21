@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strjoin_main.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 19:57:35 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/21 19:57:37 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/21 20:34:02 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/21 20:37:12 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-char    **ft_split(char const *s, char c)
+int	main()
 {
-    char    **arr;
-    int    i;
-    int    j;
-    int    len;
+	char	*s1 = "Prefix +";
+	char	*s2 = " Suffix";
+	char	*out;
 
-    len = ft_strlen(s) / sizeof(char);
-    arr = (char **)malloc(sizeof(char) * (len + 1));
-    i = 0;
-    while (i < len)
-    {
-        if (s[i] == c)
-        {
-
-        }
-    }
+	out = (char	*)ft_strjoin(s1, s2);
+	printf("Output: %s", out);
 }

@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 19:57:35 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/21 19:57:37 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/21 20:46:54 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/21 20:48:55 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    **ft_split(char const *s, char c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    char    **arr;
-    int    i;
-    int    j;
-    int    len;
-
-    len = ft_strlen(s) / sizeof(char);
-    arr = (char **)malloc(sizeof(char) * (len + 1));
-    i = 0;
-    while (i < len)
-    {
-        if (s[i] == c)
-        {
-
-        }
-    }
+	size_t	s1_length;
+	size_t	set_length;
+	
 }

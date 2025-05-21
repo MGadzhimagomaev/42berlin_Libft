@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 19:57:35 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/21 19:57:37 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/21 19:58:39 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/21 20:26:36 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    **ft_split(char const *s, char c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-    char    **arr;
-    int    i;
-    int    j;
-    int    len;
-
-    len = ft_strlen(s) / sizeof(char);
-    arr = (char **)malloc(sizeof(char) * (len + 1));
-    i = 0;
-    while (i < len)
-    {
-        if (s[i] == c)
-        {
-
-        }
-    }
+	char	*output;
+	// output = malloc(sizeof(char) * (len + 1));
+	output = (char *)ft_calloc(len + 1, sizeof(char));
+	if (!output)
+		return (NULL);
+	while (len--)
+	{
+		((char *)output)[len] = ((char *)s)[start + len];
+		// ft_memcpy(output, s, )
+	}
+	return (output);
 }
