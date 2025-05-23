@@ -6,7 +6,7 @@
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 19:58:39 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/21 20:26:36 by mgadzhim         ###   ########.fr       */
+/*   Updated: 2025/05/23 20:44:10 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,13 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*output;
-	// output = malloc(sizeof(char) * (len + 1));
+
 	output = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!output)
 		return (NULL);
 	while (len--)
 	{
 		((char *)output)[len] = ((char *)s)[start + len];
-		// ft_memcpy(output, s, )
 	}
 	return (output);
 }

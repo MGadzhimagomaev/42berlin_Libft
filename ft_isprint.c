@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgadzhim <mgadzhim@student.42berlin.d      +#+  +:+       +#+        */
+/*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 21:10:14 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/15 21:30:51 by mgadzhim         ###   ########.fr       */
+/*   Updated: 2025/05/23 21:24:26 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-	return (c >= 33 && c <= 126);
+	return (c >= 32 && c <= 126);
 }

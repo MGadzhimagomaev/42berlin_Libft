@@ -6,7 +6,7 @@
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 20:22:08 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/21 20:44:59 by mgadzhim         ###   ########.fr       */
+/*   Updated: 2025/05/23 21:26:21 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	len_pre = ft_strlen(s1);
 	len_suff = ft_strlen(s2);
-	output = (char *)calloc(len_pre + len_suff + 1, sizeof(char));
+	output = (char *)ft_calloc(len_pre + len_suff + 1, sizeof(char));
 	if (!output)
 		return (NULL);
 	ft_strlcpy(output, s1, len_pre);
