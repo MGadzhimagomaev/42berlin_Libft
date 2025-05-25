@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 18:04:38 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/25 20:05:17 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/21 20:46:54 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/24 18:08:05 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*last_occurence;
+	size_t	start;
+	size_t	end;
 
-	last_occurence = NULL;
-	while (*s)
-	{
-		if (*s == (char)c)
-			last_occurence = (char *)s;
-		s++;
-	}
-	if ((char)c == '\0')
-	{
-		s++;
-		return ((char *)s);
-	}
-	return (last_occurence);
+	start = 0;
+	end = ft_strlen(s1) - 1;
+	if (ft_strlen(s1) == 0)
+		return (ft_strdup(s1));
+	while (ft_strchr(set, s1[start]))
+		start++;
+	while (ft_strchr(set, s1[end]))
+		end--;
+	return (ft_substr(s1, start, end - start + 1));
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char	s[] = "Findif";
-	char	c = 'z';
-
-	printf("Check: %s\n", ft_strrchr(s, c));
-}
-//*/

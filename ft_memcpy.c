@@ -6,7 +6,7 @@
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 21:30:55 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/18 18:30:45 by mgadzhim         ###   ########.fr       */
+/*   Updated: 2025/05/25 20:55:52 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
+	
+	if ((!dest && !src) || (n == 0))
+		return (dest);
 	i = -1;
 	while (++i < n)
 	{

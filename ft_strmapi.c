@@ -1,43 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 18:04:38 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/25 20:05:17 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/25 19:02:40 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/25 19:25:36 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*last_occurence;
+	char	*output;
+	int		i;
 
-	last_occurence = NULL;
-	while (*s)
+	i = 0;
+	if (!s || !f)
+		return (NULL);
+	output = ft_strdup(s);
+	if (!output)
+		return (NULL);
+	while (output[i])
 	{
-		if (*s == (char)c)
-			last_occurence = (char *)s;
-		s++;
+		output[i] = f(i, output[i]);
+		i++;
 	}
-	if ((char)c == '\0')
-	{
-		s++;
-		return ((char *)s);
-	}
-	return (last_occurence);
+	return (output);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char	s[] = "Findif";
-	char	c = 'z';
-
-	printf("Check: %s\n", ft_strrchr(s, c));
-}
-//*/

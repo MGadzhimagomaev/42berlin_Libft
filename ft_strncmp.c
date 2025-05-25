@@ -6,7 +6,7 @@
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 18:54:52 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/18 18:58:09 by mgadzhim         ###   ########.fr       */
+/*   Updated: 2025/05/25 20:15:35 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	{
 		i++;
 	}
-	return (s1[i] - s2[i]);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
 /*
 #include <stdio.h>

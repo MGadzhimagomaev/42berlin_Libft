@@ -1,43 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 18:04:38 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/25 20:05:17 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/25 19:27:14 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/25 19:29:25 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*last_occurence;
-
-	last_occurence = NULL;
-	while (*s)
-	{
-		if (*s == (char)c)
-			last_occurence = (char *)s;
-		s++;
-	}
-	if ((char)c == '\0')
-	{
-		s++;
-		return ((char *)s);
-	}
-	return (last_occurence);
+	write(fd, &c, 1);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char	s[] = "Findif";
-	char	c = 'z';
-
-	printf("Check: %s\n", ft_strrchr(s, c));
-}
-//*/

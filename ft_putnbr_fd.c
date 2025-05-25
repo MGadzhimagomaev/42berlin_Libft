@@ -1,43 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 18:04:38 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/25 20:05:17 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/05/25 19:27:19 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/05/25 20:50:56 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*last_occurence;
-
-	last_occurence = NULL;
-	while (*s)
+	if (n == -2147483648)
 	{
-		if (*s == (char)c)
-			last_occurence = (char *)s;
-		s++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	if ((char)c == '\0')
+	if (n < 0)
 	{
-		s++;
-		return ((char *)s);
+		ft_putchar_fd('-', fd);
+		n *= -1;
 	}
-	return (last_occurence);
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10) + '0', fd);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char	s[] = "Findif";
-	char	c = 'z';
-
-	printf("Check: %s\n", ft_strrchr(s, c));
-}
-//*/
