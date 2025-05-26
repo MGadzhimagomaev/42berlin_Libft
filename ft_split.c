@@ -21,11 +21,25 @@ static size_t	word_count(char const *s, char c)
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (s[i] != c && ((s[i - 1] == c) || (i == 0)))
+		if (s[i] != c && (i == 0 || s[i - 1] == c))
 			count++;
 		i++;
 	}
 	return (count);
+}
+
+static void *free_str(char **str, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return(NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -39,7 +53,6 @@ char	**ft_split(char const *s, char c)
 	if (!arr)
 		return (NULL);
 	i = 0;
-	start = 0;
 	element = 0;
 	while (s[i])
 	{
@@ -50,7 +63,10 @@ char	**ft_split(char const *s, char c)
 			i++;
 		if (i > start)
 		{
-			arr[element++] = ft_substr(s, start, i - start);
+			arr[element] = ft_substr(s, start, i - start);
+			if (!arr[element])
+				return (free_str(arr, element));
+			element++;
 		}
 	}
 	arr[element] = NULL;
