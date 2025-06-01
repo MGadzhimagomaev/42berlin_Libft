@@ -6,7 +6,7 @@
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 19:57:35 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/05/25 17:46:24 by mgadzhim         ###   ########.fr       */
+/*   Updated: 2025/06/01 19:52:21 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,24 @@ static size_t	word_count(char const *s, char c)
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static void	free_mem(char	**str, size_t	n)
 {
-	char	**arr;
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		free (str[i++]);
+	}
+	free(str);
+}
+
+static int	ft_fill_array(char **arr, char const *s, char c)
+{
 	size_t	i;
 	size_t	start;
 	size_t	element;
 
-	arr = (char **)ft_calloc((word_count(s, c) + 1), sizeof(char *));
-	if (!arr)
-		return (NULL);
 	i = 0;
 	start = 0;
 	element = 0;
@@ -51,8 +59,22 @@ char	**ft_split(char const *s, char c)
 		if (i > start)
 		{
 			arr[element++] = ft_substr(s, start, i - start);
+			if (!(arr[element - 1]))
+				return (free_mem(arr, element - 1), 0);
 		}
 	}
 	arr[element] = NULL;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+
+	arr = (char **)ft_calloc((word_count(s, c) + 1), sizeof(char *));
+	if (!arr)
+		return (NULL);
+	if (!ft_fill_array(arr, s, c))
+		return (NULL);
 	return (arr);
 }

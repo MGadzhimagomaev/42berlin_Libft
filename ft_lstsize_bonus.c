@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 18:04:38 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/06/01 19:06:05 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/06/01 18:54:58 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/06/01 18:55:02 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_lstsize(t_list *lst)
 {
-	char	*last_occurence;
+	int	size;
 
-	last_occurence = NULL;
-	while (*s)
+	size = 0;
+	while (lst)
 	{
-		if (*s == (char)c)
-			last_occurence = (char *)s;
-		s++;
+		lst = lst -> next;
+		size++;
 	}
-	if ((char)c == '\0')
-	{
-		return ((char *)s);
-	}
-	return (last_occurence);
+	return (size);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char	s[] = "Findif";
-	char	c = 'z';
-
-	printf("Check: %s\n", ft_strrchr(s, c));
-}
-//*/

@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgadzhim <mgadzhim@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 18:04:38 by mgadzhim          #+#    #+#             */
-/*   Updated: 2025/06/01 19:06:05 by mgadzhim         ###   ########.fr       */
+/*   Created: 2025/06/01 18:56:36 by mgadzhim          #+#    #+#             */
+/*   Updated: 2025/06/01 18:57:09 by mgadzhim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	*last_occurence;
+	t_list	*temp;
 
-	last_occurence = NULL;
-	while (*s)
+	if (!*lst || !del || !lst)
+		return ;
+	while (*lst)
 	{
-		if (*s == (char)c)
-			last_occurence = (char *)s;
-		s++;
+		temp = (*lst)->next;
+		ft_lstdelone(*lst, (*del));
+		*lst = temp;
 	}
-	if ((char)c == '\0')
-	{
-		return ((char *)s);
-	}
-	return (last_occurence);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char	s[] = "Findif";
-	char	c = 'z';
-
-	printf("Check: %s\n", ft_strrchr(s, c));
-}
-//*/
