@@ -27,3 +27,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcpy(output + len_pre, s2, len_suff + 1);
 	return (output);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char *s1 = "Hello, ";
+	char *s2 = "world!";
+
+	printf("ft_strjoin: %s\n", ft_strjoin(s1, s2));
+}
+//*/

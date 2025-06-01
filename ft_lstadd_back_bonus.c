@@ -21,3 +21,28 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		ft_lstlast(*lst)->next = new;
 	}
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    t_list *head = ft_lstnew("start");
+    ft_lstadd_back(&head, ft_lstnew("middle"));
+    ft_lstadd_back(&head, ft_lstnew("end"));
+
+    t_list *tmp = head;
+    while (tmp)
+    {
+        printf("%s\n", (char *)tmp->content);
+        tmp = tmp->next;
+    }
+
+    // free nodes manually
+    while (head)
+    {
+        t_list *next = head->next;
+        free(head);
+        head = next;
+    }
+}//*/

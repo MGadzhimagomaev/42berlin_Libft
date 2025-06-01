@@ -16,3 +16,10 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+/*
+#include <unistd.h>
+
+int main()
+{
+    ft_putstr_fd("Hello, world!\n", 1);
+}//*/

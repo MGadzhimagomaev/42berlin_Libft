@@ -30,3 +30,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (output);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    char *res = ft_strmapi("Hello 42!", ft_toupper);
+    printf("ft_strmapi: %s\n", res);
+    free(res);
+}//*/

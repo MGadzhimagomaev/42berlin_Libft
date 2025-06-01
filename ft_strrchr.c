@@ -31,12 +31,13 @@ char	*ft_strrchr(const char *s, int c)
 }
 /*
 #include <stdio.h>
+#include <string.h>
 
-int	main()
+int	main(void)
 {
-	char	s[] = "Findif";
-	char	c = 'z';
+	char *s = "banana";
 
-	printf("Check: %s\n", ft_strrchr(s, c));
+	printf("ft_strrchr: %s\n", ft_strrchr(s, 'a'));
+	printf("strrchr:    %s\n", strrchr(s, 'a'));
 }
 //*/

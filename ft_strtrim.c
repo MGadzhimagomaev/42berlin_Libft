@@ -27,3 +27,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	return (ft_substr(s1, start, end - start + 1));
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char *s1 = "---hello---";
+	char *set = "-";
+
+	printf("ft_strtrim: %s\n", ft_strtrim(s1, set));
+}
+//*/

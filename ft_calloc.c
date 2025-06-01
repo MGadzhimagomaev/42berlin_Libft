@@ -24,3 +24,20 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(output, nmemb * size);
 	return (output);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int	main(void)
+{
+	char *mem = ft_calloc(5, sizeof(char));
+
+	if (mem)
+	{
+		for (int i = 0; i < 5; i++)
+			printf("%d ", mem[i]);
+		printf("\n");
+		free(mem);
+	}
+}
+//*/

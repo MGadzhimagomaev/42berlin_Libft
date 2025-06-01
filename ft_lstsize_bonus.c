@@ -24,3 +24,23 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (size);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    t_list *head = ft_lstnew("1");
+    ft_lstadd_front(&head, ft_lstnew("0"));
+    ft_lstadd_back(&head, ft_lstnew("2"));
+
+    printf("List size: %d\n", ft_lstsize(head));
+
+    // free nodes manually
+    while (head)
+    {
+        t_list *tmp = head->next;
+        free(head);
+        head = tmp;
+    }
+}//*/

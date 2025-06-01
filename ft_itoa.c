@@ -61,3 +61,17 @@ char	*ft_itoa(int n)
 	output[len - 1] = n + '0';
 	return (output);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int nums[] = {1234, -5678, 0};
+    for (int i = 0; i < 3; i++)
+    {
+        char *res = ft_itoa(nums[i]);
+        printf("ft_itoa(%d) = %s\n", nums[i], res);
+        free(res);
+    }
+}//*/

@@ -20,3 +20,12 @@ void	ft_putstr_fd(char *s, int fd)
 		s++;
 	}
 }
+/*
+#include <unistd.h>
+
+int main()
+{
+    ft_putstr_fd("Test string for ft_putstr_fd\n", 1);
+    ft_putstr_fd("", 1);  // empty string test
+    ft_putstr_fd("Another line.\n", 1);
+}//*/

@@ -78,3 +78,14 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (arr);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char **out = ft_split("a b  c", ' ');
+
+	for (int i = 0; out[i]; i++)
+		printf("Word %d: %s\n", i, out[i]);
+}
+//*/

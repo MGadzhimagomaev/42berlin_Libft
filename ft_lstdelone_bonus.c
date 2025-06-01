@@ -19,3 +19,21 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	(*del)(lst->content);
 	free(lst);
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+void del(void *content)
+{
+    printf("Deleting content: %s\n", (char *)content);
+    // no actual freeing of content since string literals, just example
+}
+
+int main()
+{
+    t_list *node = ft_lstnew("to delete");
+    ft_lstdelone(node, del);
+    // node memory freed inside ft_lstdelone
+
+    return 0;
+}//*/

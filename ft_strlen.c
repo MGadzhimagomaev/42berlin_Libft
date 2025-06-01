@@ -24,3 +24,19 @@ size_t	ft_strlen(const char *s)
 	}
 	return (sizeof(char) * i);
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char *tests[] = {"", "Hello", "42 School", "   Lead sp", "Spec chr!@#"};
+    int size = sizeof(tests) / sizeof(tests[0]);
+
+    for (int i = 0; i < size; i++)
+    {
+        printf("ft_strlen(\"%s\") = %zu, strlen(\"%s\") = %zu\n",
+            tests[i], ft_strlen(tests[i]),
+            tests[i], strlen(tests[i]));
+    }
+}//*/

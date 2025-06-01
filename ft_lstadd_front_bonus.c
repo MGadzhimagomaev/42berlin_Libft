@@ -19,3 +19,21 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new -> next = *lst;
 	*lst = new;
 }
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    t_list *head = ft_lstnew("second");
+    t_list *new_node = ft_lstnew("first");
+
+    ft_lstadd_front(&head, new_node);
+
+    printf("First node content: %s\n", (char *)head->content);
+    printf("Second node content: %s\n", (char *)head->next->content);
+
+    // free nodes manually for your test
+    free(head->next);
+    free(head);
+}//*/

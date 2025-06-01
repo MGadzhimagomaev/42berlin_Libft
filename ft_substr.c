@@ -32,3 +32,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (output);
 }
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char *s = "libft is cool";
+
+	printf("ft_substr: %s\n", ft_substr(s, 6, 4)); // should print "is c"
+}
+//*/

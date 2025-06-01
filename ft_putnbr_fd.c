@@ -28,3 +28,15 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd((n % 10) + '0', fd);
 }
+/*
+#include <unistd.h>
+
+int main()
+{
+    ft_putnbr_fd(12345, 1);
+    ft_putchar_fd('\n', 1);
+    ft_putnbr_fd(-6789, 1);
+    ft_putchar_fd('\n', 1);
+    ft_putnbr_fd(0, 1);
+    ft_putchar_fd('\n', 1);
+}//*/

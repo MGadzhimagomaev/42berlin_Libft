@@ -23,3 +23,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
+/*
+#include <stdio.h>
+
+int main()
+{
+    char str[] = "hello 42!";
+    ft_striteri(str, ft_toupper);
+    printf("ft_striteri: %s\n", str);
+}//*/

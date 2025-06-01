@@ -17,3 +17,10 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
+/*
+#include <unistd.h>
+
+int main()
+{
+    ft_putendl_fd("Hello, 42!", 1);
+}//*/
